@@ -16,6 +16,10 @@ public class Usuario {
     @Column(columnDefinition = "uuid", name = "usu_id", nullable = false, updatable = false)
     private UUID id;
 
+    @ManyToOne
+    @JoinColumn(name = "usu_emp_id", referencedColumnName = "emp_id")
+    private Empresa empresa;
+
     @NotEmpty
     @Size(max = 255)
     @Column(name = "usu_email", unique = true)
@@ -28,9 +32,5 @@ public class Usuario {
 
     @Column(name = "usu_ativo")
     private Boolean ativo;
-
-    @ManyToOne()
-    @JoinColumn(name = "usu_emp_id", referencedColumnName = "emp_id")
-    private Empresa empresa;
 
 }
