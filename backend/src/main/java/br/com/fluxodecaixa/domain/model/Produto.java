@@ -18,7 +18,7 @@ public class Produto {
     private UUID id;
 
     @NotNull
-    @Column(name = "pro_codigo", unique = true)
+    @Column(name = "pro_codigo")
     private Integer codigo;
 
     @Size(max = 100)
@@ -37,11 +37,6 @@ public class Produto {
     @Size(max = 1000)
     @Column(name = "pro_descricao_completa")
     private String descricaoCompleta;
-
-    @ManyToOne
-    @NotNull
-    @JoinColumn(name = "pro_emp_id", referencedColumnName = "emp_id")
-    private Empresa empresa;
 
     @ManyToOne
     @NotNull
