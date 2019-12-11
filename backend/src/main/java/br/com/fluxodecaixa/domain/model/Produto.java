@@ -33,19 +33,17 @@ public class Produto {
 
     @NotNull
     @Column(name = "pro_preco_venda", columnDefinition = "numeric (15,2)")
-    private Double pro_preco_venda;
+    private Double precoVenda;
 
     @Size(max = 1000)
-    @Column(name = "pro_descricao_completa")
-    private String descricaoCompleta;
+    @Column(name = "pro_observacao")
+    private String observacao;
 
     @ManyToOne
-    @NotNull
     @JoinColumn(name = "pro_und_id", referencedColumnName = "und_id")
     private UnidadeMedida unidadeMedida;
 
     @ManyToOne
-    @NotNull
     @JoinColumn(name = "pro_cat_id", referencedColumnName = "cat_id")
     private Categoria categoria;
 
