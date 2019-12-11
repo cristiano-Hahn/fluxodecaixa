@@ -13,6 +13,7 @@ import java.util.UUID;
 public class Usuario {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(columnDefinition = "uuid", name = "usu_id", nullable = false, updatable = false)
     private UUID id;
 

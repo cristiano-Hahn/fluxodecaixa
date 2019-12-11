@@ -19,6 +19,7 @@ import java.util.UUID;
 public class Empresa {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(columnDefinition = "uuid", name = "emp_id", nullable = false, updatable = false)
     private UUID id;
 
