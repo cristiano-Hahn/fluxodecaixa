@@ -34,7 +34,7 @@ public class ProdutoController {
     }
 
     @DeleteMapping("/produtos/{id}")
-    public ResponseEntity<?> atualizarProduto(@PathVariable("id") UUID id) {
+    public ResponseEntity<?> excluirProduto(@PathVariable("id") UUID id) {
         service.excluirProduto(id);
         return ResponseEntity.ok().build();
     }
@@ -45,7 +45,7 @@ public class ProdutoController {
     }
 
     @GetMapping("/produtos")
-    public ResponseEntity<List<ProdutoDto>> buscarProduto(@RequestParam(required = false) String filtro) {
+    public ResponseEntity<List<ProdutoDto>> buscarTodosProdutos(@RequestParam(required = false) String filtro) {
         return ResponseEntity.ok(service.buscarTodosProdutos(filtro));
     }
 }
