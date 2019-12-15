@@ -3,7 +3,6 @@ package br.com.fluxodecaixa.interfaces.rest;
 import br.com.fluxodecaixa.application.ProdutoService;
 import br.com.fluxodecaixa.interfaces.transfer.produto.ProdutoDto;
 import br.com.fluxodecaixa.interfaces.transfer.util.IdDto;
-import com.sun.istack.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
