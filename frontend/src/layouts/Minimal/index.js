@@ -14,7 +14,8 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-const Minimal = props => {
+export default function Minimal(props) {
+  
   const { children } = props;
 
   const classes = useStyles();
@@ -22,7 +23,9 @@ const Minimal = props => {
   return (
     <div className={classes.root}>
       <TopBar />
-      <main className={classes.content}>{children}</main>
+      <main className={classes.content}>
+        {children}
+      </main>
     </div>
   );
 };
@@ -32,4 +35,3 @@ Minimal.propTypes = {
   className: PropTypes.string
 };
 
-export default Minimal;

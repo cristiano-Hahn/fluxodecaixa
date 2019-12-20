@@ -5,15 +5,23 @@ import MinimalLayout from './layouts/Minimal'
 import MainLayout from './layouts/Main'
 
 import NotFound from './views/NotFound';
+import SignIn from './views/SignIn';
+import SignUp from './views/SignUp';
 
 const Routes = () => {
   return (
     <Switch>
       <RouteWithLayout
-        layout={MinimalLayout}
-        component={NotFound}
+        component={SignIn}
         exact
-        path="/notfound"
+        layout={MinimalLayout}
+        path="/sign-in"
+      />
+      <RouteWithLayout
+        component={SignUp}
+        exact
+        layout={MinimalLayout}
+        path="/sign-up"
       />
       <RouteWithLayout
         layout={MainLayout}

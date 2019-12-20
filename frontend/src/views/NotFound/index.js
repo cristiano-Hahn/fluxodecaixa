@@ -6,7 +6,7 @@ import ImageNotFound from './images/undraw_page_not_found_su7k.svg';
 
 import { useStyles } from './style';
 
-const NotFound = () => {
+export default function NotFound() {
   const classes = useStyles();
 
   return (
@@ -16,11 +16,7 @@ const NotFound = () => {
         justify="center"
         spacing={4}
       >
-        <Grid
-          item
-          lg={6}
-          xs={12}
-        >
+        <Grid item lg={6} xs={12}>
           <div className={classes.content}>
             <Typography variant="h1">
               A página que você procura não está aqui
@@ -39,5 +35,3 @@ const NotFound = () => {
     </div>
   );
 };
-
-export default NotFound;
