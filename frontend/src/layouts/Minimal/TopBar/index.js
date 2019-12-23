@@ -1,8 +1,10 @@
 import React from 'react';
 import clsx from 'clsx';
-import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
-import { AppBar, Toolbar, IconButton, Typography } from '@material-ui/core';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -13,7 +15,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const Topbar = props => {
+export default function Topbar(props) {
   const { className, ...rest } = props;
 
   const classes = useStyles();
@@ -26,18 +28,11 @@ const Topbar = props => {
       position="fixed"
     >
       <Toolbar>
-        <IconButton color="inherit">
-          <Typography variant="h3" component="h2" className={classes.title}>
-            Fluxo de caixa
-          </Typography>
-        </IconButton>
+        <Typography variant="h3" component="h2" className={classes.title}>
+          Fluxo de caixa
+        </Typography>
       </Toolbar>
     </AppBar>
   );
 };
 
-Topbar.propTypes = {
-  className: PropTypes.string
-};
-
-export default Topbar;
