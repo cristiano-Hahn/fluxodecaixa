@@ -1,0 +1,5 @@
+/backend/*.gitignore
+/*.gitignore
+/backend/.mvn/*
+/frontend/package-lock.json
+
