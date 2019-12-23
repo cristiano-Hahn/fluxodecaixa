@@ -9,13 +9,17 @@ import org.springframework.stereotype.Service;
 public class CriarProduto {
 
     private final ProdutoRepository produtoRepository;
+    private final CalcularMargemLucro calcularMargemLucro;
 
     @Autowired
-    public CriarProduto(ProdutoRepository produtoRepository) {
+    public CriarProduto(ProdutoRepository produtoRepository,
+                        CalcularMargemLucro calcularMargemLucro) {
         this.produtoRepository = produtoRepository;
+        this.calcularMargemLucro = calcularMargemLucro;
     }
 
     public Produto executar(Produto values) {
+        values.setMargemLucro(calcularMargemLucro.executar(values.getPrecoCusto(), values.getPrecoVenda()));
         return produtoRepository.save(values);
     }
 

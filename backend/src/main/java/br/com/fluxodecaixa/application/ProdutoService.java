@@ -35,7 +35,6 @@ public class ProdutoService {
 
     public IdDto criarProduto(ProdutoDto produtoDto) {
         Produto values = new Produto();
-        values.setCodigo(produtoDto.getCodigo());
         values.setNome(produtoDto.getNome());
         values.setPrecoCusto(produtoDto.getPrecoCusto());
         values.setPrecoVenda(produtoDto.getPrecoVenda());
@@ -46,7 +45,6 @@ public class ProdutoService {
 
     public void atualizarProduto(UUID id, ProdutoDto produtoDto) {
         Produto values = new Produto();
-        values.setCodigo(produtoDto.getCodigo());
         values.setNome(produtoDto.getNome());
         values.setPrecoCusto(produtoDto.getPrecoCusto());
         values.setPrecoVenda(produtoDto.getPrecoVenda());
@@ -61,13 +59,13 @@ public class ProdutoService {
 
     public ProdutoDto buscarProduto(UUID id) {
         Produto produto = buscarProduto.executar(id);
-
         ProdutoDto result = new ProdutoDto();
         result.setId(produto.getId());
         result.setCodigo(produto.getCodigo());
         result.setNome(produto.getNome());
         result.setPrecoCusto(produto.getPrecoCusto());
         result.setPrecoVenda(produto.getPrecoVenda());
+        result.setMargemLucro(produto.getMargemLucro());
         result.setObservacao(produto.getObservacao());
         return result;
     }
@@ -84,6 +82,7 @@ public class ProdutoService {
             produtoDto.setPrecoCusto(produto.getPrecoCusto());
             produtoDto.setPrecoVenda(produto.getPrecoVenda());
             produtoDto.setObservacao(produto.getObservacao());
+            produtoDto.setMargemLucro(produto.getMargemLucro());
             result.add(produtoDto);
         }
         return result;

@@ -13,7 +13,6 @@ public class ProdutoDto implements Serializable {
 
     UUID id;
 
-    @NotNull
     Integer codigo;
 
     @Size(max = 100)
@@ -25,6 +24,8 @@ public class ProdutoDto implements Serializable {
 
     @NotNull
     Double precoVenda;
+
+    Double margemLucro;
 
     @Size(max = 1000)
     String observacao;

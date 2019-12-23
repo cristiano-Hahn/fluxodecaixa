@@ -13,10 +13,12 @@ import java.util.UUID;
 public class AtualizarProduto {
 
     private final ProdutoRepository produtoRepository;
+    private final CalcularMargemLucro calcularMargemLucro;
 
     @Autowired
-    public AtualizarProduto(ProdutoRepository produtoRepository) {
+    public AtualizarProduto(ProdutoRepository produtoRepository, CalcularMargemLucro calcularMargemLucro) {
         this.produtoRepository = produtoRepository;
+        this.calcularMargemLucro = calcularMargemLucro;
     }
 
     public Produto executar(UUID id, Produto values) {
@@ -28,8 +30,8 @@ public class AtualizarProduto {
         produto.setObservacao(values.getObservacao());
         produto.setPrecoVenda(values.getPrecoVenda());
         produto.setPrecoCusto(values.getPrecoCusto());
+        produto.setMargemLucro(calcularMargemLucro.executar(values.getPrecoCusto(), values.getPrecoVenda()));
         produto.setNome(values.getNome());
-        produto.setCodigo(values.getCodigo());
 
         return produtoRepository.save(produto);
     }
