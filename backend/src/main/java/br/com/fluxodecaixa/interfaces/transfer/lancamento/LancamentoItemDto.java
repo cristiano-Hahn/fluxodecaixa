@@ -1,4 +1,4 @@
-package br.com.fluxodecaixa.interfaces.transfer.venda;
+package br.com.fluxodecaixa.interfaces.transfer.lancamento;
 
 import lombok.Data;
 
@@ -7,7 +7,8 @@ import java.io.Serializable;
 import java.util.UUID;
 
 @Data
-public class VendaItemDto implements Serializable {
+public class LancamentoItemDto implements Serializable {
+
     @NotNull
     UUID produtoId;
 
